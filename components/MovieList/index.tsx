@@ -10,7 +10,7 @@ type Movie = {
   Title: string
   Year: number
   Genre: string
-  Discription: string
+  Description: string
   CreatedAt: string
   Ratings: any
 }
@@ -82,7 +82,7 @@ const MovieList: React.FC<Props> = ({
         <strong>Year:</strong> {movie.Year}
       </p>
       <p className="card-text">
-        <strong>Description:</strong> {movie.Discription}
+        <strong>Description:</strong> {movie.Description}
       </p>
       <p className="card-text">
         <strong>Created At:</strong>{' '}

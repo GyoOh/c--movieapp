@@ -87,7 +87,7 @@ export default function Movie({ session }: any) {
           Title: title,
           Year: Number(year),
           Genre: genre,
-          Discription: discription,
+          Description: discription,
           CreatedAt: movie?.CreatedAt,
         }),
       },
