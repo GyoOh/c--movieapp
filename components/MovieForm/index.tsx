@@ -9,7 +9,7 @@ type Movie = {
   Title: string
   Year: number
   Genre: string
-  Discription: string
+  Description: string
   CreatedAt: string
   Ratings: any
 }
@@ -50,7 +50,7 @@ export default function MovieForm({
     title: string,
     year: number,
     genre: string,
-    discription: string,
+    description: string,
   ) => void
   movies: Movie[]
   ratingHandler: (
@@ -64,7 +64,7 @@ export default function MovieForm({
   const [title, setTitle] = useState('')
   const [year, setYear] = useState(0)
   const [genre, setGenre] = useState('')
-  const [discription, setDiscription] = useState('')
+  const [description, setdescription] = useState('')
   const [movieId, setMovieId] = useState(movies.length > 0 ? movies[0].Id : 0)
 
   useEffect(() => {
@@ -77,11 +77,11 @@ export default function MovieForm({
       return
     }
     e.preventDefault()
-    onSubmit(e, title, year, genre, discription)
+    onSubmit(e, title, year, genre, description)
     setTitle('')
     setYear(0)
     setGenre('')
-    setDiscription('')
+    setdescription('')
   }
   const addRating = (e: React.FormEvent<HTMLFormElement>) => {
     if(!session?.accessToken) {
@@ -135,13 +135,13 @@ export default function MovieForm({
           />
         </div>
         <div className="form-group">
-          <label htmlFor="discription">Discription</label>
+          <label htmlFor="description">description</label>
           <textarea
             className="form-control"
-            placeholder="Discription"
-            id="discription"
-            value={discription}
-            onChange={(e) => setDiscription(e.target.value)}
+            placeholder="description"
+            id="description"
+            value={description}
+            onChange={(e) => setdescription(e.target.value)}
           />
         </div>
         <div className="btn-div">
@@ -154,7 +154,7 @@ export default function MovieForm({
               setTitle('')
               setYear(0)
               setGenre('')
-              setDiscription('')
+              setdescription('')
             }}
           >
             Cancel

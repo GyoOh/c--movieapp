@@ -9,7 +9,7 @@ type Movie = {
   Title: string
   Year: number
   Genre: string
-  Discription: string
+  Description: string
   CreatedAt: string
   Ratings: any
 }
@@ -45,7 +45,7 @@ export default function Movie({ session }: any) {
   const [title, setTitle] = useState('')
   const [year, setYear] = useState(0)
   const [genre, setGenre] = useState('')
-  const [discription, setDiscription] = useState('')
+  const [description, setdescription] = useState('')
 
   const [movie, setMovie] = useState<Movie>()
   const router = useRouter()
@@ -62,7 +62,7 @@ export default function Movie({ session }: any) {
           setTitle(thisData.Title)
           setYear(thisData.Year)
           setGenre(thisData.Genre)
-          setDiscription(thisData.Discription)
+          setdescription(thisData.description)
           setMovie(thisData)
         }
       }
@@ -87,7 +87,7 @@ export default function Movie({ session }: any) {
           Title: title,
           Year: Number(year),
           Genre: genre,
-          Description: discription,
+          Description: description,
           CreatedAt: movie?.CreatedAt,
         }),
       },
@@ -136,13 +136,13 @@ export default function Movie({ session }: any) {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="discription">Discription</label>
+            <label htmlFor="description">description</label>
             <textarea
               className="form-control"
-              placeholder="Discription"
-              id="discription"
-              value={discription}
-              onChange={(e) => setDiscription(e.target.value)}
+              placeholder="description"
+              id="description"
+              value={description}
+              onChange={(e) => setdescription(e.target.value)}
             />
           </div>
           <div className="btn-div">

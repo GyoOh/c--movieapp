@@ -14,7 +14,7 @@ type Movie = {
   Title: string
   Year: number
   Genre: string
-  Discription: string
+  Description: string
   CreatedAt: string
   Ratings: any
 }
@@ -79,7 +79,7 @@ export default function Home({session}: any) {
     title: string,
     year: number,
     genre: string,
-    discription: string,
+    description: string,
   ) => {
     e.preventDefault()
     if (!title || !year || !genre) return
@@ -94,7 +94,7 @@ export default function Home({session}: any) {
           Title: title,
           Year: year,
           Genre: genre,
-          Description: discription,
+          Description: description,
         }),
       },
     )
