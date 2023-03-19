@@ -199,6 +199,7 @@ div.card {
   .card-text {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
+  width: 500px;
   }
   
   .comment {
@@ -236,10 +237,21 @@ div.card {
   }
 
 /* ===================MEDIA QUERIES(SMALL DEVICES) =================== */
+@media screen and (max-width: 1280px) {
+  /* .row-cols-1 {
+    width: 800px;
+  } */
+}
+
 @media screen and (max-width: 600px) {
  .form-div{
     flex-direction: column;
     justify-content: center;
     align-items: center;
  }
+ .card-text {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  width: 400px;
+  }
 }

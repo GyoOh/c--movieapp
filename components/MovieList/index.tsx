@@ -71,14 +71,14 @@ const MovieList: React.FC<Props> = ({
   }
 
   return (
-    <div className={`card mb-3 ${styles.movieCard} bg-lightblue`}>
+    <div className={`card mb-3 ${styles.movieCard} bg-grey`}>
     <div className="card-body card-body-div">
       <div className={styles.movie_list}>
       <h2 className="card-title">{movie.Title}</h2>
-      <p className="card-text">
+      <p className={`${styles.text} card-text`}>
         <strong>Genre:</strong> {movie.Genre}
       </p>
-      <p className="card-text">
+      <p className={`${styles.text} card-text`}>
         <strong>Year:</strong> {movie.Year}
       </p>
       <p className="card-text">

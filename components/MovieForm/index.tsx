@@ -24,15 +24,6 @@ type Rating = {
 export async function getServerSideProps(context: any) {
   const session = await getServerSession(context.req, context.res, authOptions)
 
-  // if (!session) {
-  //   return {
-  //     redirect: {
-  //       destination: '/',
-  //       permanent: false,
-  //     },
-  //   }
-  // }
-
   return {
     props: {
       session: JSON.parse(JSON.stringify(session)),

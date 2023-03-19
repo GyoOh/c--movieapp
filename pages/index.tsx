@@ -30,16 +30,6 @@ type Rating = {
 
 export async function getServerSideProps(context: any) {
   const session = await getServerSession(context.req, context.res, authOptions)
-
-  // if (!session) {
-  //   return {
-  //     redirect: {
-  //       destination: '/',
-  //       permanent: false,
-  //     },
-  //   }
-  // }
-
   return {
     props: {
       session: JSON.parse(JSON.stringify(session)),
@@ -52,7 +42,6 @@ export default function Home({session}: any) {
 
   const [movies, setMovies] = useState<Movie[]>([])
   const [ratings, setRatings] = useState<Rating[]>([])
-  const router = useRouter()
  
 
   useEffect(() => {
@@ -145,12 +134,9 @@ export default function Home({session}: any) {
         movies={movies}
         ratingHandler={ratingHandler}
         session={session}
-
       />
-      <div className="container card-div">
-        <div className="row row-cols-1 row-cols-md-3 g-4">
           {movies.map((movie) => (
-            <div className="col" key={movie.Id}>
+            <div className={`${styles.col} col`} key={movie.Id}>
               <MovieList
                 movie={movie}
                 onDelete={deleteHandler}
@@ -160,8 +146,6 @@ export default function Home({session}: any) {
               />
             </div>
           ))}
-        </div>
-      </div>
     </div>
   )
 }
