@@ -184,16 +184,20 @@ export default function MovieForm({
           />
         </div>
         <div className="form-group">
-          <label htmlFor="ratingValue">Rating </label>
-          <input
-            type="number"
-            className="form-control"
-            placeholder="Rating"
-            id="ratingValue"
-            value={ratingValue}
-            onChange={(e) => setRatingValue(Number(e.target.value))}
-          />
-        </div>
+  <label htmlFor="ratingValue">Rating </label>
+  <select
+    className="form-control"
+    id="ratingValue"
+    value={ratingValue}
+    onChange={(e) => setRatingValue(Number(e.target.value))}
+  >
+    {[...Array(11)].map((_, i) => (
+      <option key={i} value={i}>
+        {i}
+      </option>
+    ))}
+  </select>
+</div>
         <div className="btn-div">
           <button type="submit" className="btn btn-primary">
             Submit

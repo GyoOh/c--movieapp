@@ -69,6 +69,12 @@ const MovieList: React.FC<Props> = ({
     )
     setRatings(ratings.filter((rating) => rating.Id !== id))
   }
+  const date = new Date(movie?.CreatedAt);
+const formattedDate = date.toLocaleString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric'
+});
 
   return (
     <div className={`card mb-3 ${styles.movieCard} bg-grey`}>
@@ -82,11 +88,11 @@ const MovieList: React.FC<Props> = ({
         <strong>Year:</strong> {movie.Year}
       </p>
       <p className="card-text">
-        <strong>Description:</strong> {movie.Description}
+        <strong>Description</strong> <br/>{movie.Description}
       </p>
-      <p className="card-text">
-        <strong>Created At:</strong>{' '}
-        {new Date(movie.CreatedAt).toLocaleDateString()}
+      <p className={styles.date}>
+      Created at: {" "}
+        {movie?.CreatedAt && formattedDate}
       </p>
       <div className={`btn-group btn-div ${styles.btn_div}`}>
         <button

@@ -68,6 +68,12 @@
 .text {
   color: gray;
   font-size: 0.8rem;
+  text-align: right;
+}
+.date{
+  color: gray;
+  font-size: 0.8rem;
+  text-align: left;
 }
 
 @media screen and (max-width: 1024px) {

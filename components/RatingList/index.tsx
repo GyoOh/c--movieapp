@@ -51,17 +51,37 @@ export default function RatingList({
     }
     deleteRating(rating.Id)
   }
+
+  const date = new Date(rating?.CreatedAt);
+  const formattedDate = date.toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  });
+  const stars = ( rate: number ) => {
+    let stars = "";
+    for (let i = 0; i < 10; i++) {
+      if (i < rate) {
+        stars += "★";
+      } else {
+        stars += "☆";
+      }
+    }
+    return <p className="Stars">{stars}</p>;
+  };
+  
+  
   return (
 
     <div className={styles.review_list}>
       <div className="review-item" key={rating.CreatedAt}>
-        <h6 className="review-title">Review {RatingNum}</h6>
+       
         <p className="review-comment">{rating.Comment}</p>
         <p className="review-meta">
-          {rating.RatingValue}
+          {stars(rating.RatingValue)}
           <br />
           <span className="review-date">
-            {new Date(rating.CreatedAt).toLocaleDateString()}
+            {rating?.CreatedAt ? formattedDate : 'No date'}
           </span>
         </p>
         <div className={`review-actions ${styles.review_btn_div}`}>
