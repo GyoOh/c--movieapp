@@ -61,7 +61,7 @@ export default function Home({session}: any) {
         'https://pqp1nh04y7.execute-api.ca-central-1.amazonaws.com/movies',
       ).then((res) => res.json())
       const data = await result
-      setMovies(data)
+      setMovies(data.sort((a: Movie, b: Movie) => b.CreatedAt.localeCompare(a.CreatedAt)))
     })()
   }, [])
   useEffect(() => {

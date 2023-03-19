@@ -62,7 +62,7 @@ export default function Movie({ session }: any) {
           setTitle(thisData.Title)
           setYear(thisData.Year)
           setGenre(thisData.Genre)
-          setdescription(thisData.description)
+          setdescription(thisData.Description)
           setMovie(thisData)
         }
       }
