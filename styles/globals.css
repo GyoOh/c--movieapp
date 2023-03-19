@@ -239,5 +239,7 @@ div.card {
 @media screen and (max-width: 600px) {
  .form-div{
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
  }
 }
