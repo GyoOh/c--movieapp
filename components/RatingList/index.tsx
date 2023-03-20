@@ -74,31 +74,33 @@ export default function RatingList({
   return (
 
     <div className={styles.review_list}>
-      <div className="review-item" key={rating.CreatedAt}>
-       
-        <p className="review-comment">{rating.Comment}</p>
-        <p className="review-meta">
-          {stars(rating.RatingValue)}
-          <br />
-          <span className="review-date">
-            {rating?.CreatedAt ? formattedDate : 'No date'}
-          </span>
-        </p>
-        <div className={`review-actions ${styles.review_btn_div}`}>
-          <button
-            className="btn btn-outline-primary btn-effect"
-            onClick={editHandler}
-          >
-            Edit
-          </button>
-          <button
-            className="btn btn-outline-primary btn-effect"
-            onClick={deleteHandler}
-          >
-            Delete
-          </button>
-        </div>
+        <div className={styles.review_meta}>
+        <span className={`review-date ${styles.review_date}`}>
+          {rating?.CreatedAt ? formattedDate : 'No date'}
+        </span>
+      </div>
+    <div className="review-item" key={rating.CreatedAt}>
+      <span className={`review-rate ${styles.review_rate}`}>
+        {stars(rating.RatingValue)}
+      </span>
+      <div className={styles.review_top_line}></div>
+      <p className={`review-comment ${styles.review_comment}`}>{rating.Comment}</p>
+    
+      <div className={`review-actions ${styles.review_btn_div}`}>
+        <button
+          className="btn btn-outline-primary btn-effect"
+          onClick={editHandler}
+        >
+          Edit
+        </button>
+        <button
+          className="btn btn-outline-primary btn-effect"
+          onClick={deleteHandler}
+        >
+          Delete
+        </button>
       </div>
     </div>
+  </div>
   )
 }

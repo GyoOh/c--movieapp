@@ -168,9 +168,7 @@ form:hover {
 .card-body {
   padding: 10px;
 }
-.card-text {
-  margin: 0;
-}
+
 .text-muted {
   color: #999;
 }
@@ -252,6 +250,6 @@ div.card {
  .card-text {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  width: 400px;
+  width: 300px;
   }
 }
